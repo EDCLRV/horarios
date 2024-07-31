@@ -3,60 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnóstico de Salud</title>
+    <title>Tabla de Medidas y Diagnóstico</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
+         button {
+            padding: 15px 30px; /* Espaciado interno del botón */
+            justify-content: center;
+            font-size: 16px; /* Tamaño de la fuente */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            background-color: #007BFF; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
         }
-        
         table {
-            width: 100%;
+            width: 50%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin: 20px auto;
         }
-        
         th, td {
+            border: 1px solid #000;
             padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
-        
-        input[type=number] {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #45a049;
+        th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
-        <div class="posistion-absolute testimonial p-4">
-            <h1 class="font-weight-bold text-light" >Hackathon 2024</h1>
-        <h3 class="font-weight-bold text-light">Categoria "Salud para el Bienestar"</h3>
-        <h4 class="font-weight-bold text-light">Equipo: Sabor Digital</h4>
-        <center><img src="plato1.jpg" alt="La nutricion es la base de la salud" width="300" height="300"> </center>
-        <p class="text-justify">De acuerdo con la NOM, las recomendaciones para seguir adecuadamente El Plato del Bien Comer son: comer en gran medida frutas y verduras preferentemente con cáscara; incluir cereales integrales en cada comida; comer alimentos de origen animal con moderación; evitar lo más posible los azúcares, grasas, aceites, edulcorantes y sal; realizar tres comidas y dos colaciones al día; y hacer ejercicio al menos 30 minutos diarios.</p>
-        </div>
-    <h1>Diagnóstico de Salud</h1>
-    
-     <table>
+
+    <table>
         <thead>
             <tr>
                 <th>Medida</th>
@@ -65,17 +42,35 @@
             </tr>
         </thead>
         <tbody>
-                    
+            <tr>
+                <td>Edad</td>
+                <td><input type="number" id="edad" placeholder="Edad en años"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Peso (kg)</td>
+                <td><input type="number" id="peso" placeholder="Peso en kg"></td>
+                <td rowspan="2">
+                    <button onclick="calcularIMC()">Calcular IMC</button>
+                    <div id="diagnostico-peso"></div>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>Talla (m)</td>
+                <td><input type="number" id="talla" placeholder="Talla en metros"></td>
+                <td id="diagnostico-talla"></td>
+            </tr>
             <tr>
                 
                 <td>TAS</td>
-                <td><input type="number" id="tas" placeholder="Ingrese TAS"></td>
+                <td><input type="number" id="tas" placeholder="Ingrese valor"></td>
                 <td rowspan="2" id="diagnostico"></td>
                 
             </tr>
             <tr>
                 <td>TAD</td>
-                <td><input type="number" id="tad" placeholder="Ingrese TAD"></td>
+                <td><input type="number" id="tad" placeholder="Ingrese valor"></td>
             </tr>
            
            
@@ -94,20 +89,20 @@
                 <td><input type="number" id="frecuenciaCardiaca" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-frecuencia"></td>
             </tr>
-            <tr>
-                <td>IMC</td>
-                <td><input type="number" id="imc" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-imc"></td>
-            </tr>
+          
             <tr>
                 <td>Temperatura Corporal</td>
                 <td><input type="number" id="temperatura" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-temperatura"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><button onclick="calcularDiagnostico()">Calcular Diagnóstico</button></td>
+            </tr>
         </tbody>
     </table>
     
-    <button onclick="calcularDiagnostico()">Calcular Diagnóstico</button>
     <h1>Dietas Saludables</h1>
     
     <table>
@@ -141,100 +136,122 @@
             </tr>
         </tbody>
     </table>
-    
     <script>
-        function calcularDiagnostico() {
-            // Diagnóstico para Presión Sistólica
-            const tas = parseInt(document.getElementById('tas').value);
-            const tad = parseInt(document.getElementById('tad').value);
-            let diagnostico = '';
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const talla = parseFloat(document.getElementById('talla').value);
+            const diagnosticoPeso = document.getElementById('diagnostico-peso');
+            const diagnosticoTalla = document.getElementById('diagnostico-talla');
 
-            if (tas < 90 && tad < 60) {
-                diagnostico = 'Hipotensión';
-            } else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
-                diagnostico = 'Normotensión';
-            } else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
-                diagnostico = 'Elevada';
-            } else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
-                diagnostico = 'Hipertensión Nivel 1';
-            } else if (tas > 140 || tad > 90) {
-                diagnostico = 'Hipertensión Nivel 2';
-            } else if (tas > 180 || tad > 120) {
-                diagnostico = 'Crisis Hipertensiva';
+            if (!isNaN(peso) && !isNaN(talla) && talla > 0) {
+                const imc = peso / (talla * talla);
+                diagnosticoPeso.innerText = `IMC: ${imc.toFixed(2)}`;
+
+                // Diagnóstico basado en el IMC
+                let mensajeDiagnostico;
+                if (imc < 18.5) {
+                    mensajeDiagnostico = "Bajo peso";
+                } else if (imc >= 18.5 && imc < 24.9) {
+                    mensajeDiagnostico = "Normal";
+                } else if (imc >= 25 && imc < 30) {
+                    mensajeDiagnostico = "Sobrepeso";
+                } else if (imc >= 30 && imc < 34.9) {
+                    mensajeDiagnostico = "Obesidad I";
+                } else if (imc >= 35 && imc < 39.9) {
+                    mensajeDiagnostico = "Obesidad II";
+                } else {
+                    mensajeDiagnostico = "Obesidad III";
+                }
+                diagnosticoTalla.innerText = mensajeDiagnostico;
             } else {
-                diagnostico = 'Valor fuera de rango';
-            }
-
-            document.getElementById('diagnostico').innerText = diagnostico;
-        
- 
-        
-
-
-            // Diagnóstico para Glucosa Capilar en Ayunas
-           
-            const glucosa = parseInt(document.getElementById("glucosa").value);
-            const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
-            if (glucosa < 100) {
-                diagnosticoGlucosa.textContent = "Normoglucemia";
-            } else if (glucosa >= 101 && glucosa <= 125) {
-                diagnosticoGlucosa.textContent = "Pre Diabetes";
-            } else if (glucosa >= 126) {
-                diagnosticoGlucosa.textContent = "Probable Diabetes";
-            } else {
-                diagnosticoGlucosa.textContent = "Valor no válido";
-            }
-
-            // Puedes agregar diagnósticos para las otras medidas aquí
-            // Ejemplo para colesterol
-            const colesterol = parseInt(document.getElementById("colesterol").value);
-            const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
-            if (colesterol < 200) {
-                diagnosticoColesterol.textContent = "Normal";
-            } else if (colesterol >= 200 && colesterol < 240) {
-                diagnosticoColesterol.textContent = "Colesterol Elevado";
-            } else {
-                diagnosticoColesterol.textContent = "Colesterol Alto";
-            }
-
-            // Ejemplo para frecuencia cardíaca
-            const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
-            const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
-            if (frecuencia < 60) {
-                diagnosticoFrecuencia.textContent = "Bradicardia";
-            } else if (frecuencia >= 60 && frecuencia <= 100) {
-                diagnosticoFrecuencia.textContent = "Normal";
-            } else {
-                diagnosticoFrecuencia.textContent = "Taquicardia";
-            }
-
-            // Ejemplo para IMC
-            const imcValor = parseFloat(document.getElementById("imc").value);
-            const diagnosticoIMC = document.getElementById("diagnostico-imc");
-            if (imcValor < 18.5) {
-                diagnosticoIMC.textContent = "Bajo Peso";
-            } else if (imcValor >= 18.5 && imcValor < 24.9) {
-                diagnosticoIMC.textContent = "Peso Normal";
-            } else if (imcValor >= 25 && imcValor < 29.9) {
-                diagnosticoIMC.textContent = "Sobrepeso";
-            } else {
-                diagnosticoIMC.textContent = "Obesidad";
-            }
-
-          
-
-            // Ejemplo para temperatura
-            const temperatura = parseFloat(document.getElementById("temperatura").value);
-            const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
-            if (temperatura < 36.1) {
-                diagnosticoTemperatura.textContent = "Hipotermia";
-            } else if (temperatura >= 36.1 && temperatura <= 37.2) {
-                diagnosticoTemperatura.textContent = "Normal";
-            } else {
-                diagnosticoTemperatura.textContent = "Fiebre";
+                diagnosticoPeso.innerText = 'Ingrese peso y talla válidos';
+                diagnosticoTalla.innerText = '';
             }
         }
+        function calcularDiagnostico() {
+
+           
+
+// Diagnóstico para Presión Arterial
+const tas = parseInt(document.getElementById('tas').value);
+const tad = parseInt(document.getElementById('tad').value);
+let diagnostico = '';
+
+
+
+if (tas < 90 && tad < 60) {
+    diagnostico = 'Hipotensión';
+} else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
+    diagnostico = 'Normotensión';
+} else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
+    diagnostico = 'Elevada';
+} else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
+    diagnostico = 'Hipertensión Nivel 1';
+} else if (tas > 140 || tad > 90) {
+    diagnostico = 'Hipertensión Nivel 2';
+} else if (tas > 180 || tad > 120) {
+    diagnostico = 'Crisis Hipertensiva';
+} else {
+    diagnostico = 'Valor fuera de rango';
+}
+
+document.getElementById('diagnostico').innerText = diagnostico;
+
+
+
+
+
+// Diagnóstico para Glucosa Capilar en Ayunas
+
+const glucosa = parseInt(document.getElementById("glucosa").value);
+const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
+if (glucosa < 100) {
+    diagnosticoGlucosa.textContent = "Normoglucemia";
+} else if (glucosa >= 101 && glucosa <= 125) {
+    diagnosticoGlucosa.textContent = "Pre Diabetes";
+} else if (glucosa >= 126) {
+    diagnosticoGlucosa.textContent = "Probable Diabetes";
+} else {
+    diagnosticoGlucosa.textContent = "Valor no válido";
+}
+
+// Diagostico para colesterol
+const colesterol = parseInt(document.getElementById("colesterol").value);
+const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
+if (colesterol < 200) {
+    diagnosticoColesterol.textContent = "Normal";
+} else if (colesterol >= 200 && colesterol < 240) {
+    diagnosticoColesterol.textContent = "Colesterol Elevado";
+} else {
+    diagnosticoColesterol.textContent = "Colesterol Alto";
+}
+
+// Ejemplo para frecuencia cardíaca
+const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
+const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
+if (frecuencia < 60) {
+    diagnosticoFrecuencia.textContent = "Bradicardia";
+} else if (frecuencia >= 60 && frecuencia <= 100) {
+    diagnosticoFrecuencia.textContent = "Normal";
+} else {
+    diagnosticoFrecuencia.textContent = "Taquicardia";
+}
+
+
+  // Ejemplo para temperatura
+  const temperatura = parseFloat(document.getElementById("temperatura").value);
+const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
+if (temperatura < 36.1) {
+    diagnosticoTemperatura.textContent = "Hipotermia";
+} else if (temperatura >= 36.1 && temperatura <= 37.2) {
+    diagnosticoTemperatura.textContent = "Normal";
+} else {
+    diagnosticoTemperatura.textContent = "Fiebre";
+}
+
+
+}
     </script>
+
 </body>
 </html>
-
