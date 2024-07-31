@@ -8,10 +8,10 @@
          button {
             padding: 15px 30px; /* Espaciado interno del botón */
             justify-content: center;
-            font-size: 12px; /* Tamaño de la fuente */
+            font-size: 16px; /* Tamaño de la fuente */
             border: none; /* Sin borde */
             border-radius: 5px; /* Bordes redondeados */
-            background-color: #228B22; /* Color de fondo del botón */
+            background-color: #007BFF; /* Color de fondo del botón */
             color: white; /* Color del texto */
             cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
             transition: background-color 0.3s; /* Transición suave para el color de fondo */
@@ -45,21 +45,26 @@
             <tr>
                 <td>Edad</td>
                 <td><input type="number" id="edad" placeholder="Edad en años"></td>
-                <td></td>
+                <td id="diagnostico-edad"></td>
             </tr>
             <tr>
                 <td>Peso (kg)</td>
                 <td><input type="number" id="peso" placeholder="Peso en kg"></td>
-                <td rowspan="2">
+                <td style="border-bottom-color: white">
                     <button onclick="calcularIMC()">Calcular IMC</button>
-                    <div id="diagnostico-peso"></div>
+                    <div>
+                        <p id="diagnostico-peso"></p>
+                        <p id="diagnostico-talla"></p>
+                    </div>
+                    <!-- <td id=""></td> -->
                    
                 </td>
             </tr>
             <tr>
                 <td>Talla (m)</td>
-                <td><input type="number" id="talla" placeholder="Talla en metros"></td>
-                <td id="diagnostico-talla"></td>
+                <td style="border-bottom: none;"><input type="number" id="talla" placeholder="Talla en metros"></td>
+                <td></td>
+                <!-- <td id="diagnostico-talla"></td> -->
             </tr>
             <tr>
                 
@@ -215,6 +220,27 @@ if (glucosa < 100) {
     diagnosticoGlucosa.textContent = "Valor no válido";
 }
 
+// Diagnóstico para Edad
+
+const edad = parseInt(document.getElementById("edad").value);
+const diagnosticoEdad = document.getElementById("diagnostico-edad");
+if (edad < 5) {
+    diagnosticoEdad.textContent = "Primera Infancia";
+} else if (edad >= 5 && edad <= 12) {
+    diagnosticoEdad.textContent = "Infancia";
+} else if (edad > 11 && edad <=18) {
+    diagnosticoEdad.textContent = "Adolescente";
+} else if (edad > 18 && edad <=26) {
+    diagnosticoEdad.textContent = "Joven";
+} else if (edad > 18 && edad <=26) {
+    diagnosticoEdad.textContent = "Joven";
+} else if (edad > 26 && edad <=59) {
+    diagnosticoEdad.textContent = "Adultez";
+} else if (edad > 59 && edad <=100) {
+    diagnosticoEdad.textContent = "Adulto Mayor";
+} else {
+    diagnosticoGlucosa.textContent = "Valor no válido";
+}
 // Diagostico para colesterol
 const colesterol = parseInt(document.getElementById("colesterol").value);
 const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
