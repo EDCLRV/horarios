@@ -139,8 +139,11 @@ iframe {
 }
 .portada{
     text-align: justify;
-    font
-    color: #06520a;
+    font-size: cover;
+    color: #f6faf6;
+    font-style:normal;
+    font-weight: bolder;
+    
 }
 
 .subtitulo{
