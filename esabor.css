@@ -30,7 +30,10 @@ header{
     background-attachment: fixed;
     background-position: center;
 }
-
+a{
+    text-align: center;
+    color: rgba(148, 71, 144, 0.5);
+    }
 iframe {
     width: 110%; /* Ajusta el ancho según sea necesario */
     height: 400px; /* Ajusta la altura según sea necesario */
