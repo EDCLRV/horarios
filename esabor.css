@@ -89,8 +89,8 @@ iframe {
     margin-bottom: 15px;
 }
 .copy{
-    font-weight: 300;
-    font-size: 25px;
+    text-align: justify;
+    font-size: 20px;
 }
 
 .subtitulo{
