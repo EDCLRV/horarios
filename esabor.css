@@ -23,8 +23,7 @@ body{
 
 header{
     height: 100vh;
-    background-image: linear-gradient(to top, rgba(161, 140, 209, 0.5) 3%,
-     rgba(251, 194, 235, 0.5) 5%) , url(plato1.jpg);
+    background-image: url(plato1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -140,7 +139,8 @@ iframe {
 }
 .portada{
     text-align: justify;
-    font-size: 20px;
+    font
+    color: #06520a;
 }
 
 .subtitulo{
