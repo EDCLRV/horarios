@@ -14,10 +14,10 @@ body{
 
 .contenedor{
     width: 90%;
-    max-width: 1200px;
+    max-width: 600px;
     overflow: hidden;
     margin: auto;
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 
