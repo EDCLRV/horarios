@@ -1,327 +1,142 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Medidas y Diagnóstico</title>
-    <style>
-         button {
-            padding: 5px 5px; /* Espaciado interno del botón */
-            justify-content: left;
-            font-size: 10px; /* Tamaño de la fuente */
-            border: none; /* Sin borde */
-            border-radius: 2px; /* Bordes redondeados */
-            background-color: #007BFF; /* Color de fondo del botón */
-            color: white; /* Color del texto */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-            transition: background-color 0.3s; /* Transición suave para el color de fondo */
-        }
-        iframe {
-            width: 80%; /* Ajusta el ancho según sea necesario */
-            height: 400px; /* Ajusta la altura según sea necesario */
-            border: none; /* Sin borde */
-            justify-content: center;
-        }
-        table {
-            width: 40%;
-            //*table-layout: fixed; /* Hace que la tabla tenga un ancho fijo */
-            border-collapse: collapse;
-            margin: 2px auto;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>pagina con menu</title>
+    <link rel="stylesheet" href="esabor.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Source+Sans+Pro:wght@200&display=swap">
 </head>
 <body>
- <div class="posistion-absolute testimonial p-4">
-            <h1 class="font-weight-bold text-light" >Hackathon 2024</h1>
-        <h3 class="font-weight-bold text-light">Categoria "Salud para el Bienestar"</h3>
-        <h4 class="font-weight-bold text-light">Equipo: Sabor Digital</h4>
-        <center><img src="plato1.jpg" alt="La nutricion es la base de la salud" width="300" height="300"> </center>
-        <p class="text-justify">De acuerdo con la NOM, las recomendaciones para seguir adecuadamente El Plato del Bien Comer son: comer en gran medida frutas y verduras preferentemente con cáscara; incluir cereales integrales en cada comida; comer alimentos de origen animal con moderación; evitar lo más posible los azúcares, grasas, aceites, edulcorantes y sal; realizar tres comidas y dos colaciones al día; y hacer ejercicio al menos 30 minutos diarios.</p>
+    <header class="header" id="inicio">
+        <img src="bx-menu.svg" alt=""   class="hamburguer">
+        <nav class="menu-navegacion">
+
+            <a href="#inicio">Inicio</a>
+            <a href="#servicio">Prediagnostico</a>
+            <a href="#dietas">Dietas</a>
+            <a href="#contacto">Contacto</a>
+
+            
+        </nav>
+        <div class="contenedor head">
+            <h1 class="titulo">Alimentación SANA</h1>
+            
+            <h1 class="titulo">con</h1>
+            
+            <h1 class="titulo">"SABOR DIGITAL"</h1>
+            
+             <p class="copy">
+                De acuerdo con la NOM, las recomendaciones para seguir adecuadamente El Plato del Bien Comer son: comer en gran medida frutas y verduras preferentemente con cáscara; incluir cereales integrales en cada comida; comer alimentos de origen animal con moderación; evitar lo más posible los azúcares, grasas, aceites, edulcorantes y sal; realizar tres comidas y dos colaciones al día; y hacer ejercicio al menos 30 minutos diarios.</p>
+            </p>
+            
+         </div>
+    </header>
+
+
+   
+
+<main>
+    <section class="contenedor" id="servicio">
+        <h2 class="Subtitulo">Te generamos tu diagnostico Preventivo</h2>
+        <div class="contenedor-servicio">
+            <img src="corazon.jpeg" alt="">
+            <div class="checklist-servicio">
+                <div class="service">
+                    <h3 class="n-service"><span class="number">1</span>Calcula tu IMC</h3>
+                    <p>
+                        El Índice de Masa Corporal (IMC) es una medida que relaciona el peso y la altura de una persona para determinar si se encuentra en un rango de peso saludable. Se calcula dividiendo el peso en kilogramos por la altura en metros al cuadrado. 
+                        Según la Organización Mundial de la Salud (OMS), los valores del IMC se clasifican de la siguiente manera   
+                    </p>
+
+                </div>
+                <div class="service">
+                    <h3 class="n-service"><span class="number">2</span>Verifica tu presión arterial</h3>
+                    <p>
+                        La presión arterial es la fuerza que ejerce la sangre contra las paredes de las arterias mientras circula por el cuerpo. Esta presión varía en función de la elasticidad de los vasos sanguíneos, su tamaño y la cantidad de sangre que bombea el corazón1.
+
+                        Se mide en milímetros de mercurio (mmHg) y se presenta con dos valores:
+                        
+                        Presión sistólica: Es la presión cuando el corazón late y bombea sangre.
+                        Presión diastólica: Es la presión cuando el corazón está en reposo entre latidos2.
+                        Por ejemplo, una lectura de 120/80 mmHg significa una presión sistólica de 120 y una presión diastólica de 80
+                      </p>
+
+                </div>
+                <div class="service">
+                    <h3 class="n-service"><span class="number">3</span>Glucosa</h3>
+                    <p>
+                        La diabetes es una enfermedad que ocurre cuando la glucosa en la sangre, también llamada azúcar en la sangre, es demasiado alta. La glucosa es la principal fuente de energía del cuerpo. Su cuerpo puede producir glucosa, pero la glucosa también proviene de los alimentos que consume.
+                        La insulina es una hormona producida por el páncreas que ayuda a que la glucosa entre en las células para ser utilizada como energía. Si tiene diabetes, su cuerpo no produce insulina, no produce lo suficiente o no la usa correctamente. La glucosa se queda en la sangre y no llega a las células.
+                        La diabetes aumenta el riesgo de daño a los ojos, los riñones, los nervios y el corazón. La diabetes también está relacionada con algunos tipos de cáncer. Tomar medidas para prevenir o manejar la diabetes puede reducir el riesgo de desarrollar problemas de salud relacionados con esta.
+</p>
+                </div>
+                <div class="service">
+                    <h3 class="n-service"><span class="number">4</span>Colesterol</h3>
+                    <p>
+
+                        La sangre conduce el colesterol desde el intestino o el hígado hasta los órganos que lo necesitan y lo hace uniéndose a partículas llamadas lipoproteínas. Existen dos tipos de lipoproteínas:
+
+De baja densidad (LDL): se encargan de transportar nuevo colesterol desde el hígado a todas la células de nuestro organismo.
+De alta densidad (HDL): recogen el colesterol no utilizado y lo devuelve al hígado para su almacenamiento o excreción al exterior a través de la bilis.
+Por estas características tan diferentes, al colesterol unido a lipoproteínas de baja densidad (cLDL) se le ha denominado, popularmente, el “colesterol malo”. Por el contrario, al colesterol unido a lipoproteínas de alta densidad (cHDL) tiene funciones protectoras frente a la aterosclerosis.
+
+</p>
+
+                </div>
+            </div>
         </div>
-    <h1>Diagnóstico de Salud</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Medida</th>
-                <th>Valor</th>
-                <th>Diagnóstico</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Edad</td>
-                <td><input type="number" id="edad" placeholder="Edad en años"></td>
-                <td id="diagnostico-edad"></td>
-            </tr>
-            <tr>
-                <td>Peso (kg)</td>
-                <td><input type="number" id="peso" placeholder="Peso en kg"></td>
-                <td style="border-bottom-color: white">
-                    <button onclick="calcularIMC()">Calcular IMC</button>
-                    <div>
-                        <p id="diagnostico-peso"></p>
-                        <p id="diagnostico-talla"></p>
-                    </div>
-                    <!-- <td id=""></td> -->
-                   
-                </td>
-            </tr>
-            <tr>
-                <td>Talla (m)</td>
-                <td style="border-bottom: none;"><input type="number" id="talla" placeholder="Talla en metros"></td>
-                <td></td>
-                <!-- <td id="diagnostico-talla"></td> -->
-            </tr>
-            <tr>
+    </section>
+    <section class="gallery" id="dietas">
+        <div class="contedor">
+            <h2 class="subtitulo">A continuación te ofrecemos algunas dietas para mejorar tu estado de salud</h2>
+            <div class="contenedor-galeria">
+                <img src="imagenes/colesterol.jpeg" alt="" width="1300px" class="img-galeria">
+                <img src="imagenes/diabetes.jpeg" alt="" width="1300px" class="img-galeria">
+                <img src="imagenes/sobrepeso.jpeg" alt="" width="1300px" class="img-galeria">
                 
-                <td>TAS</td>
-                <td><input type="number" id="tas" placeholder="Ingrese valor"></td>
-                <td rowspan="2" id="diagnostico"></td>
-                
-            </tr>
-            <tr>
-                <td>TAD</td>
-                <td><input type="number" id="tad" placeholder="Ingrese valor"></td>
-            </tr>
-           
-           
-            <tr>
-                <td>Glucosa</td>
-                <td><input type="number" id="glucosa" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-glucosa"></td>
-            </tr>
-            <tr>
-                <td>Colesterol Total</td>
-                <td><input type="number" id="colesterol" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-colesterol"></td>
-            </tr>
-            <tr>
-                <td>Frecuencia Cardíaca</td>
-                <td><input type="number" id="frecuenciaCardiaca" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-frecuencia"></td>
-            </tr>
-          
-            <tr>
-                <td>Temperatura Corporal</td>
-                <td><input type="number" id="temperatura" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-temperatura"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><button onclick="calcularDiagnostico()">Calcular Diagnóstico</button></td>
-            </tr>
-        </tbody>
-    </table>
+            </div>
+        </div>
+    </section>
     
-    <h1>Dietas Saludables</h1>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>Dieta para Glucosa Alta</th>
-                <th>Dieta para Hipertensión</th>
-                <th>Dieta para Sobrepeso</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="https://www.mayoclinic.org/es-es/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diabetes-diet/art-20048496" target="_blank">Dieta para diabetes</a></td>
-                <td><a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations" target="_blank">Dieta DASH</a></td>
-                <td><a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/index.htm" target="_blank">Dieta para perder peso</a></td>
-            </tr>
-            <tr>
-                <td><a href="https://www.diabetes.org.uk/guide-to-diabetes/enjoy-food/eating-with-diabetes/meal-planning" target="_blank">Planificación de comidas para diabetes</a></td>
-                <td><a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sodium/how-to-reduce-sodium" target="_blank">Reducción de sodio</a></td>
-                <td><a href="https://www.cdc.gov/healthyweight/healthy_eating/index.html" target="_blank">Alimentación saludable para perder peso</a></td>
-            </tr>
-            <tr>
-                <td><a href="https://www.diabeteseducator.org/patient-resources/tip-sheets" target="_blank">Consejos para una dieta saludable con diabetes</a></td>
-                <td><a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/mediterranean-diet" target="_blank">Dieta mediterránea</a></td>
-                <td><a href="https://www.nhlbi.nih.gov/health/educational/wecan/eat-right/sample-menus.htm" target="_blank">Menús de ejemplo para perder peso</a></td>
-            </tr>
-            <tr>
-                <td><a href="https://www.cdc.gov/diabetes/managing/eat-well/meal-plan-method.html" target="_blank">Método de planificación de comidas para diabetes</a></td>
-                <td><a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations" target="_blank">Recomendaciones de dieta y estilo de vida de la AHA</a></td>
-                <td><a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/behavior.htm" target="_blank">Cambios de comportamiento para perder peso</a></td>
-            </tr>
-        </tbody>
-    </table>
-      <table>
-        <thead>
-            <tr>
-                <th>Calculador de Calorias del IMSS</th>
-                <th>O</th>
-                <th>Rutas Metabolicas</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-               
-                <td>
-                    <a href="https://www.imss.gob.mx/salud-en-linea/apps-sano/calculadora-calorias" target="_blank">Para tu dieta diaria, puedes verificar aquí las calorias de acuerdo a tu peso y talla.</a>
-                    <p>No olvides cubrir las 5 áreas del plato del buen comer: 22% Cereales y tubérculos,50% Verduras, 8% Alimentos de Origen Animal, Leche y derivados y Leguminosas </p>
-                </td>
-                 <td></td>
-                 <td>
-                   <a href="https://www.youtube.com/watch?v=ffVtb2brbro">Rutas Metabolicas</a>
-                   </td>
-               
-            </tr>
+
+
+    <section id="experts" class="contenedor">
+        <h2 class="subtitulo">Guía de Alimentación</h2>
+       
            
-        </tbody>
-    </table>
-<p>A continuación te proporciono una Guía de Alimentos sugerida por el IMSS:</p>
+             <iframe src="guiaalimentos.pdf" width="100%" height="500px"></iframe>
 
-    <iframe src="guiaalimentos.pdf" width="30%" height="300px"></iframe>
+    </section>
+</main>
 
-  
-    
-    <script>
-        function calcularIMC() {
-            const peso = parseFloat(document.getElementById('peso').value);
-            const talla = parseFloat(document.getElementById('talla').value);
-            const diagnosticoPeso = document.getElementById('diagnostico-peso');
-            const diagnosticoTalla = document.getElementById('diagnostico-talla');
-
-            if (!isNaN(peso) && !isNaN(talla) && talla > 0) {
-                const imc = peso / (talla * talla);
-                diagnosticoPeso.innerText = `IMC: ${imc.toFixed(2)}`;
-
-                // Diagnóstico basado en el IMC
-                let mensajeDiagnostico;
-                if (imc < 18.5) {
-                    mensajeDiagnostico = "Bajo peso";
-                } else if (imc >= 18.5 && imc < 24.9) {
-                    mensajeDiagnostico = "Normal";
-                } else if (imc >= 25 && imc < 30) {
-                    mensajeDiagnostico = "Sobrepeso";
-                } else if (imc >= 30 && imc < 34.9) {
-                    mensajeDiagnostico = "Obesidad I";
-                } else if (imc >= 35 && imc < 39.9) {
-                    mensajeDiagnostico = "Obesidad II";
-                } else {
-                    mensajeDiagnostico = "Obesidad III";
-                }
-                diagnosticoTalla.innerText = mensajeDiagnostico;
-            } else {
-                diagnosticoPeso.innerText = 'Ingrese peso y talla válidos';
-                diagnosticoTalla.innerText = '';
-            }
-        }
-        function calcularDiagnostico() {
+<footer id="contacto">
+    <div class="contenedor footer-content">
+        <div class="contact-us">
+            <h2 class="brand">
+                Equipo: Sabor Digital
+            </h2>
+            <p>Nos preocupa tu bienestar, empezando por tu alimentación</p>
+        </div>
+        <div class="social-media">
 
            
+            <a href="" class="social-media-icon"><i class='bx bxl-facebook'></i></a>
+            <a href="" class="social-media-icon"><i class='bx--bxl-tiktok'></i></a>
+            <a href="" class="social-media-icon"><i class='bx bxl-instagram'></i></a>
+           
+        </div>
+    </div>
+    <div class="line">
 
-// Diagnóstico para Presión Arterial
-const tas = parseInt(document.getElementById('tas').value);
-const tad = parseInt(document.getElementById('tad').value);
-let diagnostico = '';
+    </div>
 
+</footer>
 
-
-if (tas < 90 && tad < 60) {
-    diagnostico = 'Hipotensión';
-} else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
-    diagnostico = 'Normotensión';
-} else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
-    diagnostico = 'Elevada';
-} else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
-    diagnostico = 'Hipertensión Nivel 1';
-} else if (tas > 140 || tad > 90) {
-    diagnostico = 'Hipertensión Nivel 2';
-} else if (tas > 180 || tad > 120) {
-    diagnostico = 'Crisis Hipertensiva';
-} else {
-    diagnostico = 'Valor fuera de rango';
-}
-
-document.getElementById('diagnostico').innerText = diagnostico;
-
-
-
-
-
-// Diagnóstico para Glucosa Capilar en Ayunas
-
-const glucosa = parseInt(document.getElementById("glucosa").value);
-const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
-if (glucosa < 100) {
-    diagnosticoGlucosa.textContent = "Normoglucemia";
-} else if (glucosa >= 101 && glucosa <= 125) {
-    diagnosticoGlucosa.textContent = "Pre Diabetes";
-} else if (glucosa >= 126) {
-    diagnosticoGlucosa.textContent = "Probable Diabetes";
-} else {
-    diagnosticoGlucosa.textContent = "Valor no válido";
-}
-
-// Diagnóstico para Edad
-
-const edad = parseInt(document.getElementById("edad").value);
-const diagnosticoEdad = document.getElementById("diagnostico-edad");
-if (edad < 5) {
-    diagnosticoEdad.textContent = "Primera Infancia";
-} else if (edad >= 5 && edad <= 12) {
-    diagnosticoEdad.textContent = "Infancia";
-} else if (edad > 11 && edad <=18) {
-    diagnosticoEdad.textContent = "Adolescente";
-} else if (edad > 18 && edad <=26) {
-    diagnosticoEdad.textContent = "Joven";
-} else if (edad > 18 && edad <=26) {
-    diagnosticoEdad.textContent = "Joven";
-} else if (edad > 26 && edad <=59) {
-    diagnosticoEdad.textContent = "Adultez";
-} else if (edad > 59 && edad <=100) {
-    diagnosticoEdad.textContent = "Adulto Mayor";
-} else {
-    diagnosticoGlucosa.textContent = "Valor no válido";
-}
-// Diagostico para colesterol
-const colesterol = parseInt(document.getElementById("colesterol").value);
-const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
-if (colesterol < 200) {
-    diagnosticoColesterol.textContent = "Normal";
-} else if (colesterol >= 200 && colesterol < 240) {
-    diagnosticoColesterol.textContent = "Colesterol Elevado";
-} else {
-    diagnosticoColesterol.textContent = "Colesterol Alto";
-}
-
-// Ejemplo para frecuencia cardíaca
-const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
-const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
-if (frecuencia < 60) {
-    diagnosticoFrecuencia.textContent = "Bradicardia";
-} else if (frecuencia >= 60 && frecuencia <= 100) {
-    diagnosticoFrecuencia.textContent = "Normal";
-} else {
-    diagnosticoFrecuencia.textContent = "Taquicardia";
-}
-
-
-  // Ejemplo para temperatura
-  const temperatura = parseFloat(document.getElementById("temperatura").value);
-const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
-if (temperatura < 36.1) {
-    diagnosticoTemperatura.textContent = "Hipotermia";
-} else if (temperatura >= 36.1 && temperatura <= 37.2) {
-    diagnosticoTemperatura.textContent = "Normal";
-} else {
-    diagnosticoTemperatura.textContent = "Fiebre";
-}
-
-
-}
-    </script>
+    <script src="menu.js"></script>
+    <script src="lightbox.js"></script>
 
 </body>
 </html>
