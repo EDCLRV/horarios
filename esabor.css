@@ -290,8 +290,8 @@ footer{
 .social-media-icon{
     display: inline-block;
     margin-left: 20px;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #fff;
     border-radius: 50%;
     text-align: center;
@@ -302,7 +302,7 @@ footer{
     color: #764ba2;
 }
 .social-media-icon i{
-    font-size: 30px;
+    font-size: 70px;
     line-height: 60px;
 }
 .line{
