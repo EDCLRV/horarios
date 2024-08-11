@@ -254,7 +254,7 @@
 
             document.getElementById('diagnostico').innerText = diagnostico;
   
-
+        }
     
         // Diagnóstico para Glucosa
         const glucosa = parseInt(document.getElementById("glucosa").value);
@@ -284,30 +284,7 @@
             diagnosticoFrecuencia.textContent = "Taquicardia";
         }
 
-        // Ejemplo para IMC
-        const imcValor = parseFloat(document.getElementById("imc").value);
-        const diagnosticoIMC = document.getElementById("diagnostico-imc");
-        if (imcValor < 18.5) {
-            diagnosticoIMC.textContent = "Bajo Peso";
-        } else if (imcValor >= 18.5 && imcValor < 24.9) {
-            diagnosticoIMC.textContent = "Peso Normal";
-        } else if (imcValor >= 25 && imcValor < 29.9) {
-            diagnosticoIMC.textContent = "Sobrepeso";
-        } else {
-            diagnosticoIMC.textContent = "Obesidad";
-        }
-
-        // Ejemplo para presión diastólica
-        const presionDiastolica = parseInt(document.getElementById("presionDiastolica").value);
-        const diagnosticoDiastolica = document.getElementById("diagnostico-diastolica");
-        if (presionDiastolica < 80) {
-            diagnosticoDiastolica.textContent = "Normal";
-        } else if (presionDiastolica >= 80 && presionDiastolica <= 89) {
-            diagnosticoDiastolica.textContent = "Etapa 1 Hipertensión";
-        } else {
-            diagnosticoDiastolica.textContent = "Etapa 2 Hipertensión";
-        }
-
+     
         // Ejemplo para temperatura
         const temperatura = parseFloat(document.getElementById("temperatura").value);
         const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
