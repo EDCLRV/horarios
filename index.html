@@ -56,7 +56,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+         <tr>
                 <td>Edad</td>
                 <td><input type="number" id="edad" placeholder="Edad en años"></td>
                 <td id="diagnostico-edad"></td>
@@ -65,21 +65,16 @@
                 <td>Peso (kg)</td>
                 <td><input type="number" id="peso" placeholder="Peso en kg"></td>
                 <td style="border-bottom-color: white">
-                    <button onclick="calcularIMC()">Calcular IMC</button>
+                   
                     <div>
                         <p id="diagnostico-peso"></p>
-                        <p id="diagnostico-talla"></p>
+                      
                     </div>
-                    <!-- <td id=""></td> -->
+                   
                    
                 </td>
             </tr>
-            <tr>
-                <td>Talla (m)</td>
-                <td style="border-bottom: none;"><input type="number" id="talla" placeholder="Talla en metros"></td>
-                <td></td>
-                <!-- <td id="diagnostico-talla"></td> -->
-            </tr>
+         
             <tr>
                 
                 <td>TAS</td>
@@ -253,37 +248,7 @@
 </body>
 </html>
 <script>
-        function calcularIMC() {
-            const peso = parseFloat(document.getElementById('peso').value);
-            const talla = parseFloat(document.getElementById('talla').value);
-            const diagnosticoPeso = document.getElementById('diagnostico-peso');
-            const diagnosticoTalla = document.getElementById('diagnostico-talla');
-
-            if (!isNaN(peso) && !isNaN(talla) && talla > 0) {
-                const imc = peso / (talla * talla);
-                diagnosticoPeso.innerText = IMC: ${imc.toFixed(2)};
-
-                // Diagnóstico basado en el IMC
-                let mensajeDiagnostico;
-                if (imc < 18.5) {
-                    mensajeDiagnostico = "Bajo peso";
-                } else if (imc >= 18.5 && imc < 24.9) {
-                    mensajeDiagnostico = "Normal";
-                } else if (imc >= 25 && imc < 30) {
-                    mensajeDiagnostico = "Sobrepeso";
-                } else if (imc >= 30 && imc < 34.9) {
-                    mensajeDiagnostico = "Obesidad I";
-                } else if (imc >= 35 && imc < 39.9) {
-                    mensajeDiagnostico = "Obesidad II";
-                } else {
-                    mensajeDiagnostico = "Obesidad III";
-                }
-                diagnosticoTalla.innerText = mensajeDiagnostico;
-            } else {
-                diagnosticoPeso.innerText = 'Ingrese peso y talla válidos';
-                diagnosticoTalla.innerText = '';
-            }
-        }
+       
         function calcularDiagnostico() {
 
            
