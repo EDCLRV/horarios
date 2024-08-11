@@ -16,7 +16,7 @@ body{
 .contenedor{
     width: 90%;
     max-width: 700px;
-   
+    background-position: center;
     height:300px;
     overflow: hidden;
     margin: auto;
