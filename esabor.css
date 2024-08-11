@@ -229,7 +229,9 @@ iframe {
 .show{
     transform: translate(0);
 }
-
+.columna-estrecha {
+            width: 30%; /* Ancho específico para esta columna */
+        }
 .agregar-imagen{
     object-fit: cover;
     width: 60%;
