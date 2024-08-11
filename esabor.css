@@ -234,6 +234,13 @@ iframe {
             background-color: lightcoral; /* Color de fondo */
             padding: 2px; /* Espaciado interno */
         }
+
+.columna-fija {
+            width: 20px; /* Establece un ancho fijo para la columna */
+            overflow: hidden; /* Oculta el contenido que excede el ancho */
+            white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+            text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+        }
 .agregar-imagen{
     object-fit: cover;
     width: 60%;
