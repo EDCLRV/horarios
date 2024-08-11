@@ -17,7 +17,7 @@ body{
     width: 90%;
     max-width: 700px;
     background-position: center;
-    height:300px;
+    height:auto;
     overflow: hidden;
     margin: auto;
     padding: 30px 0px;
