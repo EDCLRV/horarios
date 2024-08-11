@@ -23,7 +23,7 @@ body{
 
 header{
     height: 80vh;
-    background-image: url(imagenes/plato1.jpg);
+    background-image: url(plato1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
