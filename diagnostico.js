@@ -1,3 +1,56 @@
+
+ <section class="experts" id="diagnostico">
+        <h2 class="Subtitulo">Diagnostico Dinámico</h2>
+
+<table>
+        <thead>
+            <tr>
+                <th>Medida</th>
+                <th class="columna-estrecha">Valor</th>
+                <th class="columna-estrecha">Diagnóstico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Presión Sistólica</td>
+                <td><input type="number" id="presionSistolica" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-presion"></td>
+            </tr>
+            <tr>
+                <td>Presión Diastólica</td>
+                <td><input type="number" id="presionDiastolica" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-diastolica"></td>
+            </tr>
+            <tr>
+                <td>Glucosa</td>
+                <td><input type="number" id="glucosa" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-glucosa"></td>
+            </tr>
+            <tr>
+                <td>Colesterol Total</td>
+                <td><input type="number" id="colesterol" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-colesterol"></td>
+            </tr>
+            <tr>
+                <td>Frecuencia Cardíaca</td>
+                <td><input type="number" id="frecuenciaCardiaca" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-frecuencia"></td>
+            </tr>
+            <tr>
+                <td>Índice de Masa Corporal (IMC)</td>
+                <td><input type="number" id="imc" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-imc"></td>
+            </tr>
+            <tr>
+                <td>Temperatura Corporal</td>
+                <td><input type="number" id="temperatura" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-temperatura"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+      <button onclick="calcularDiagnostico()">Calcular Diagnóstico</button>
+  </section>
 <script>
         function calcularIMC() {
             const peso = parseFloat(document.getElementById('peso').value);
