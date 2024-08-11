@@ -35,8 +35,8 @@ a{
     color: rgba(148, 71, 144, 0.5);
     }
 iframe {
-    width: 110%; /* Ajusta el ancho según sea necesario */
-    height: 400px; /* Ajusta la altura según sea necesario */
+  /*  width: 110%;  Ajusta el ancho según sea necesario */
+   /* height: 400px;  Ajusta la altura según sea necesario */
     border: none; /* Sin borde */
     justify-content: center;}
 
@@ -262,7 +262,7 @@ iframe {
     
 }
 .cont-expert img{
-    width: 120%;
+    width: 90%;
     display: block;
     margin: 0 auto;
 }
@@ -321,7 +321,7 @@ footer{
 }
 .line{
     width: 90%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     height: 2px;
     background: #fff;
