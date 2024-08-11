@@ -1,93 +1,138 @@
 <script>
-        function calcularDiagnostico() {
-            // Diagnóstico para Presión Sistólica
-            const presion = parseInt(document.getElementById("presionSistolica").value);
-            const diagnosticoPresion = document.getElementById("diagnostico-presion");
-            if (presion < 120) {
-                diagnosticoPresion.textContent = "Normal";
-            } else if (presion >= 120 && presion <= 129) {
-                diagnosticoPresion.textContent = "Elevada";
-            } else if (presion >= 130 && presion <= 139) {
-                diagnosticoPresion.textContent = "Etapa 1 Hipertensión";
-            } else if (presion >= 140 && presion <= 179) {
-                diagnosticoPresion.textContent = "Etapa 2 Hipertensión";
-            } else if (presion >= 180) {
-                diagnosticoPresion.textContent = "Crisis Hipertensiva";
-            } else {
-                diagnosticoPresion.textContent = "Valor no válido";
-            }
-            
-            // Diagnóstico para Glucosa
-            const glucosa = parseInt(document.getElementById("glucosa").value);
-            const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
-            if (glucosa < 80) {
-                diagnosticoGlucosa.textContent = "Hipoglucemia";
-            } else if (glucosa >= 80 && glucosa <= 99) {
-                diagnosticoGlucosa.textContent = "Normal";
-            } else if (glucosa >= 100 && glucosa <= 120) {
-                diagnosticoGlucosa.textContent = "Hiperglucemia";
-            } else if (glucosa > 120) {
-                diagnosticoGlucosa.textContent = "Diabetes";
-            } else {
-                diagnosticoGlucosa.textContent = "Valor no válido";
-            }
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const talla = parseFloat(document.getElementById('talla').value);
+            const diagnosticoPeso = document.getElementById('diagnostico-peso');
+            const diagnosticoTalla = document.getElementById('diagnostico-talla');
 
-            // Puedes agregar diagnósticos para las otras medidas aquí
-            // Ejemplo para colesterol
-            const colesterol = parseInt(document.getElementById("colesterol").value);
-            const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
-            if (colesterol < 200) {
-                diagnosticoColesterol.textContent = "Normal";
-            } else if (colesterol >= 200 && colesterol < 240) {
-                diagnosticoColesterol.textContent = "Límite Alto";
-            } else {
-                diagnosticoColesterol.textContent = "Alto";
-            }
+            if (!isNaN(peso) && !isNaN(talla) && talla > 0) {
+                const imc = peso / (talla * talla);
+                diagnosticoPeso.innerText = IMC: ${imc.toFixed(2)};
 
-            // Ejemplo para frecuencia cardíaca
-            const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
-            const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
-            if (frecuencia < 60) {
-                diagnosticoFrecuencia.textContent = "Bradicardia";
-            } else if (frecuencia >= 60 && frecuencia <= 100) {
-                diagnosticoFrecuencia.textContent = "Normal";
+                // Diagnóstico basado en el IMC
+                let mensajeDiagnostico;
+                if (imc < 18.5) {
+                    mensajeDiagnostico = "Bajo peso";
+                } else if (imc >= 18.5 && imc < 24.9) {
+                    mensajeDiagnostico = "Normal";
+                } else if (imc >= 25 && imc < 30) {
+                    mensajeDiagnostico = "Sobrepeso";
+                } else if (imc >= 30 && imc < 34.9) {
+                    mensajeDiagnostico = "Obesidad I";
+                } else if (imc >= 35 && imc < 39.9) {
+                    mensajeDiagnostico = "Obesidad II";
+                } else {
+                    mensajeDiagnostico = "Obesidad III";
+                }
+                diagnosticoTalla.innerText = mensajeDiagnostico;
             } else {
-                diagnosticoFrecuencia.textContent = "Taquicardia";
-            }
-
-            // Ejemplo para IMC
-            const imcValor = parseFloat(document.getElementById("imc").value);
-            const diagnosticoIMC = document.getElementById("diagnostico-imc");
-            if (imcValor < 18.5) {
-                diagnosticoIMC.textContent = "Bajo Peso";
-            } else if (imcValor >= 18.5 && imcValor < 24.9) {
-                diagnosticoIMC.textContent = "Peso Normal";
-            } else if (imcValor >= 25 && imcValor < 29.9) {
-                diagnosticoIMC.textContent = "Sobrepeso";
-            } else {
-                diagnosticoIMC.textContent = "Obesidad";
-            }
-
-            // Ejemplo para presión diastólica
-            const presionDiastolica = parseInt(document.getElementById("presionDiastolica").value);
-            const diagnosticoDiastolica = document.getElementById("diagnostico-diastolica");
-            if (presionDiastolica < 80) {
-                diagnosticoDiastolica.textContent = "Normal";
-            } else if (presionDiastolica >= 80 && presionDiastolica <= 89) {
-                diagnosticoDiastolica.textContent = "Etapa 1 Hipertensión";
-            } else {
-                diagnosticoDiastolica.textContent = "Etapa 2 Hipertensión";
-            }
-
-            // Ejemplo para temperatura
-            const temperatura = parseFloat(document.getElementById("temperatura").value);
-            const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
-            if (temperatura < 36.1) {
-                diagnosticoTemperatura.textContent = "Hipotermia";
-            } else if (temperatura >= 36.1 && temperatura <= 37.2) {
-                diagnosticoTemperatura.textContent = "Normal";
-            } else {
-                diagnosticoTemperatura.textContent = "Fiebre";
+                diagnosticoPeso.innerText = 'Ingrese peso y talla válidos';
+                diagnosticoTalla.innerText = '';
             }
         }
-    </script>
+        function calcularDiagnostico() {
+
+           
+
+// Diagnóstico para Presión Arterial
+const tas = parseInt(document.getElementById('tas').value);
+const tad = parseInt(document.getElementById('tad').value);
+let diagnostico = '';
+
+
+
+if (tas < 90 && tad < 60) {
+    diagnostico = 'Hipotensión';
+} else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
+    diagnostico = 'Normotensión';
+} else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
+    diagnostico = 'Elevada';
+} else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
+    diagnostico = 'Hipertensión Nivel 1';
+} else if (tas > 140 || tad > 90) {
+    diagnostico = 'Hipertensión Nivel 2';
+} else if (tas > 180 || tad > 120) {
+    diagnostico = 'Crisis Hipertensiva';
+} else {
+    diagnostico = 'Valor fuera de rango';
+}
+
+document.getElementById('diagnostico').innerText = diagnostico;
+
+
+
+
+
+// Diagnóstico para Glucosa Capilar en Ayunas
+
+const glucosa = parseInt(document.getElementById("glucosa").value);
+const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
+if (glucosa < 100) {
+    diagnosticoGlucosa.textContent = "Normoglucemia";
+} else if (glucosa >= 101 && glucosa <= 125) {
+    diagnosticoGlucosa.textContent = "Pre Diabetes";
+} else if (glucosa >= 126) {
+    diagnosticoGlucosa.textContent = "Probable Diabetes";
+} else {
+    diagnosticoGlucosa.textContent = "Valor no válido";
+}
+
+// Diagnóstico para Edad
+
+const edad = parseInt(document.getElementById("edad").value);
+const diagnosticoEdad = document.getElementById("diagnostico-edad");
+if (edad < 5) {
+    diagnosticoEdad.textContent = "Primera Infancia";
+} else if (edad >= 5 && edad <= 12) {
+    diagnosticoEdad.textContent = "Infancia";
+} else if (edad > 11 && edad <=18) {
+    diagnosticoEdad.textContent = "Adolescente";
+} else if (edad > 18 && edad <=26) {
+    diagnosticoEdad.textContent = "Joven";
+} else if (edad > 18 && edad <=26) {
+    diagnosticoEdad.textContent = "Joven";
+} else if (edad > 26 && edad <=59) {
+    diagnosticoEdad.textContent = "Adultez";
+} else if (edad > 59 && edad <=100) {
+    diagnosticoEdad.textContent = "Adulto Mayor";
+} else {
+    diagnosticoGlucosa.textContent = "Valor no válido";
+}
+// Diagostico para colesterol
+const colesterol = parseInt(document.getElementById("colesterol").value);
+const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
+if (colesterol < 200) {
+    diagnosticoColesterol.textContent = "Normal";
+} else if (colesterol >= 200 && colesterol < 240) {
+    diagnosticoColesterol.textContent = "Colesterol Elevado";
+} else {
+    diagnosticoColesterol.textContent = "Colesterol Alto";
+}
+
+// Ejemplo para frecuencia cardíaca
+const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
+const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
+if (frecuencia < 60) {
+    diagnosticoFrecuencia.textContent = "Bradicardia";
+} else if (frecuencia >= 60 && frecuencia <= 100) {
+    diagnosticoFrecuencia.textContent = "Normal";
+} else {
+    diagnosticoFrecuencia.textContent = "Taquicardia";
+}
+
+
+  // Ejemplo para temperatura
+  const temperatura = parseFloat(document.getElementById("temperatura").value);
+const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
+if (temperatura < 36.1) {
+    diagnosticoTemperatura.textContent = "Hipotermia";
+} else if (temperatura >= 36.1 && temperatura <= 37.2) {
+    diagnosticoTemperatura.textContent = "Normal";
+} else {
+    diagnosticoTemperatura.textContent = "Fiebre";
+}
+
+
+}
+</script>
+
