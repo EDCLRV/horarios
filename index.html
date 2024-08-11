@@ -47,7 +47,7 @@
  <section class="contenedor" id="diagnostico">
         <h2 class="Subtitulo">Diagnostico Dinámico</h2>
 
-    <table>
+<table>
         <thead>
             <tr>
                 <th>Medida</th>
@@ -56,38 +56,11 @@
             </tr>
         </thead>
         <tbody>
-         <tr>
-                <td>Edad</td>
-                <td><input type="number" id="edad" placeholder="Edad en años"></td>
-                <td id="diagnostico-edad"></td>
-            </tr>
             <tr>
-                <td>Peso (kg)</td>
-                <td><input type="number" id="peso" placeholder="Peso en kg"></td>
-                <td style="border-bottom-color: white">
-                   
-                    <div>
-                        <p id="diagnostico-peso"></p>
-                      
-                    </div>
-                   
-                   
-                </td>
+                <td>Presión Sistólica</td>
+                <td><input type="number" id="presionSistolica" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-presion"></td>
             </tr>
-         
-            <tr>
-                
-                <td>TAS</td>
-                <td><input type="number" id="tas" placeholder="Ingrese valor"></td>
-                <td rowspan="2" id="diagnostico"></td>
-                
-            </tr>
-            <tr>
-                <td>TAD</td>
-                <td><input type="number" id="tad" placeholder="Ingrese valor"></td>
-            </tr>
-           
-           
             <tr>
                 <td>Glucosa</td>
                 <td><input type="number" id="glucosa" placeholder="Ingresa valor"></td>
@@ -103,16 +76,20 @@
                 <td><input type="number" id="frecuenciaCardiaca" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-frecuencia"></td>
             </tr>
-          
+            <tr>
+                <td>Índice de Masa Corporal (IMC)</td>
+                <td><input type="number" id="imc" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-imc"></td>
+            </tr>
+            <tr>
+                <td>Presión Diastólica</td>
+                <td><input type="number" id="presionDiastolica" placeholder="Ingresa valor"></td>
+                <td id="diagnostico-diastolica"></td>
+            </tr>
             <tr>
                 <td>Temperatura Corporal</td>
                 <td><input type="number" id="temperatura" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-temperatura"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><button onclick="calcularDiagnostico()">Calcular Diagnóstico</button></td>
             </tr>
         </tbody>
     </table>
