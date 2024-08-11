@@ -232,7 +232,7 @@ iframe {
 .columna-estrecha {
             flex: 1; /* Ocupa la mitad de espacio que la columna ancha */
             background-color: lightcoral; /* Color de fondo */
-            padding: 10px; /* Espaciado interno */
+            padding: 2px; /* Espaciado interno */
         }
 .agregar-imagen{
     object-fit: cover;
