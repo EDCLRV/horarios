@@ -56,17 +56,18 @@
             </tr>
         </thead>
         <tbody>
-        
+       
             <tr>
                 <td>TAS</td>
-                <td><input type="number" id="presionSistolica" placeholder="    "></td>
-                <td id="diagnostico-presion"></td>
+                <td><input type="number" id="tas" placeholder="Ingrese TAS"></td>
+                <td rowspan="2" id="diagnostico"></td>
             </tr>
             <tr>
                 <td>TAD</td>
-                <td><input type="number" id="presionDiastolica" placeholder="    "></td>
-                <td id="diagnostico-diastolica"></td>
+                <td><input type="number" id="tad" placeholder="Ingrese TAD"></td>
             </tr>
+
+       
             <tr>
                 <td>Glucosa</td>
                 <td><input type="number" id="glucosa" placeholder="    "></td>
@@ -222,24 +223,30 @@
 
 
 <script>
-    function calcularDiagnostico() {
-        // Diagnóstico para Presión Sistólica
-        const presion = parseInt(document.getElementById("presionSistolica").value);
-        const diagnosticoPresion = document.getElementById("diagnostico-presion");
-        if (presion < 120) {
-            diagnosticoPresion.textContent = "Normal";
-        } else if (presion >= 120 && presion <= 129) {
-            diagnosticoPresion.textContent = "Elevada";
-        } else if (presion >= 130 && presion <= 139) {
-            diagnosticoPresion.textContent = "Etapa 1 Hipertensión";
-        } else if (presion >= 140 && presion <= 179) {
-            diagnosticoPresion.textContent = "Etapa 2 Hipertensión";
-        } else if (presion >= 180) {
-            diagnosticoPresion.textContent = "Crisis Hipertensiva";
-        } else {
-            diagnosticoPresion.textContent = "Valor no válido";
+  function calcularDiagnostico() {
+       const tas = parseInt(document.getElementById('tas').value);
+            const tad = parseInt(document.getElementById('tad').value);
+            let diagnostico = '';
+
+            if (tas < 90 && tad < 60) {
+                diagnostico = 'Hipotensión';
+            } else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
+                diagnostico = 'Normotensión';
+            } else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
+                diagnostico = 'Elevada';
+            } else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
+                diagnostico = 'Hipertensión Nivel 1';
+            } else if (tas > 140 || tad > 90) {
+                diagnostico = 'Hipertensión Nivel 2';
+            } else if (tas > 180 || tad > 120) {
+                diagnostico = 'Crisis Hipertensiva';
+            } else {
+                diagnostico = 'Valor fuera de rango';
+            }
+
+            document.getElementById('diagnostico').innerText = diagnostico;
         }
-        
+    
         // Diagnóstico para Glucosa
         const glucosa = parseInt(document.getElementById("glucosa").value);
         const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
