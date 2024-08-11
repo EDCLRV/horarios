@@ -70,7 +70,7 @@
        <tr>
                 <td>Peso (kg)</td>
                 <td><input type="number" id="peso" placeholder="Ingrese Peso"></td>
-                <td rowspan="2" id="diagnostico"></td>
+                <td rowspan="2" id="diagnostico-peso"></td>
             </tr>
             <tr>
                 <td>Talla (m)</td>
@@ -272,17 +272,7 @@
         }
 
         // Puedes agregar diagnósticos para las otras medidas aquí
-        // Ejemplo para colesterol
-        const colesterol = parseInt(document.getElementById("colesterol").value);
-        const diagnosticoColesterol = document.getElementById("diagnostico-colesterol");
-        if (colesterol < 200) {
-            diagnosticoColesterol.textContent = "Normal";
-        } else if (colesterol >= 200 && colesterol < 240) {
-            diagnosticoColesterol.textContent = "Límite Alto";
-        } else {
-            diagnosticoColesterol.textContent = "Alto";
-        }
-
+    
         // Ejemplo para frecuencia cardíaca
         const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
         const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
