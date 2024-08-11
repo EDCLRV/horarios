@@ -67,14 +67,7 @@
                 <td><input type="number" id="tad" placeholder="Ingrese TAD"></td>
             </tr>
 
-      
-            <tr>
-                <td>Glucosa</td>
-                <td><input type="number" id="glucosa" placeholder="    "></td>
-                <td id="diagnostico-glucosa"></td>
-            </tr>
-            
-          
+              
         </tbody>
     </table>
       <button onclick="calcularDiagnostico()">Calcular Diagnóstico</button>
@@ -237,44 +230,6 @@
   
         }
     
-        // Diagnóstico para Glucosa
-        const glucosa = parseInt(document.getElementById("glucosa").value);
-        const diagnosticoGlucosa = document.getElementById("diagnostico-glucosa");
-        if (glucosa < 80) {
-            diagnosticoGlucosa.textContent = "Hipoglucemia";
-        } else if (glucosa >= 80 && glucosa <= 99) {
-            diagnosticoGlucosa.textContent = "Normal";
-        } else if (glucosa >= 100 && glucosa <= 120) {
-            diagnosticoGlucosa.textContent = "Hiperglucemia";
-        } else if (glucosa > 120) {
-            diagnosticoGlucosa.textContent = "Diabetes";
-        } else {
-            diagnosticoGlucosa.textContent = "Valor no válido";
-        }
-
-        // Puedes agregar diagnósticos para las otras medidas aquí
-    
-        // Ejemplo para frecuencia cardíaca
-        const frecuencia = parseInt(document.getElementById("frecuenciaCardiaca").value);
-        const diagnosticoFrecuencia = document.getElementById("diagnostico-frecuencia");
-        if (frecuencia < 60) {
-            diagnosticoFrecuencia.textContent = "Bradicardia";
-        } else if (frecuencia >= 60 && frecuencia <= 100) {
-            diagnosticoFrecuencia.textContent = "Normal";
-        } else {
-            diagnosticoFrecuencia.textContent = "Taquicardia";
-        }
-
-     
-        // Ejemplo para temperatura
-        const temperatura = parseFloat(document.getElementById("temperatura").value);
-        const diagnosticoTemperatura = document.getElementById("diagnostico-temperatura");
-        if (temperatura < 36.1) {
-            diagnosticoTemperatura.textContent = "Hipotermia";
-        } else if (temperatura >= 36.1 && temperatura <= 37.2) {
-            diagnosticoTemperatura.textContent = "Normal";
-        } else {
-            diagnosticoTemperatura.textContent = "Fiebre";
-        }
+      
     }
 </script>
