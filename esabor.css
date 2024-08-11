@@ -20,7 +20,8 @@ body{
     height:300px;
     overflow: hidden;
     margin: auto;
-    padding: 30px 0;
+    padding: 30px 0px;
+    positon: center;
 }
 
 
@@ -30,7 +31,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: right;
+    background-position: center;
 }
 a{
     text-align: center;
