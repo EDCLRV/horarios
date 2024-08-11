@@ -18,6 +18,7 @@
         <nav class="menu-navegacion">
 
             <a href="#inicio">Inicio</a>
+            <a href="#diagnostico">Diagnostico Dinámcio</a>
             <a href="#servicio">Prediagnostico</a>
             <a href="#dietas">Dietas</a>
             <a href="#doctores">Medicos</a>
@@ -56,10 +57,42 @@
         </thead>
         <tbody>
             <tr>
-                <td>Presión Sistólica</td>
-                <td><input type="number" id="presionSistolica" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-presion"></td>
+                <td>Edad</td>
+                <td><input type="number" id="edad" placeholder="Edad en años"></td>
+                <td id="diagnostico-edad"></td>
             </tr>
+            <tr>
+                <td>Peso (kg)</td>
+                <td><input type="number" id="peso" placeholder="Peso en kg"></td>
+                <td style="border-bottom-color: white">
+                    <button onclick="calcularIMC()">Calcular IMC</button>
+                    <div>
+                        <p id="diagnostico-peso"></p>
+                        <p id="diagnostico-talla"></p>
+                    </div>
+                    <!-- <td id=""></td> -->
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>Talla (m)</td>
+                <td style="border-bottom: none;"><input type="number" id="talla" placeholder="Talla en metros"></td>
+                <td></td>
+                <!-- <td id="diagnostico-talla"></td> -->
+            </tr>
+            <tr>
+                
+                <td>TAS</td>
+                <td><input type="number" id="tas" placeholder="Ingrese valor"></td>
+                <td rowspan="2" id="diagnostico"></td>
+                
+            </tr>
+            <tr>
+                <td>TAD</td>
+                <td><input type="number" id="tad" placeholder="Ingrese valor"></td>
+            </tr>
+           
+           
             <tr>
                 <td>Glucosa</td>
                 <td><input type="number" id="glucosa" placeholder="Ingresa valor"></td>
@@ -75,26 +108,20 @@
                 <td><input type="number" id="frecuenciaCardiaca" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-frecuencia"></td>
             </tr>
-            <tr>
-                <td>Índice de Masa Corporal (IMC)</td>
-                <td><input type="number" id="imc" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-imc"></td>
-            </tr>
-            <tr>
-                <td>Presión Diastólica</td>
-                <td><input type="number" id="presionDiastolica" placeholder="Ingresa valor"></td>
-                <td id="diagnostico-diastolica"></td>
-            </tr>
+          
             <tr>
                 <td>Temperatura Corporal</td>
                 <td><input type="number" id="temperatura" placeholder="Ingresa valor"></td>
                 <td id="diagnostico-temperatura"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><button onclick="calcularDiagnostico()">Calcular Diagnóstico</button></td>
+            </tr>
         </tbody>
     </table>
-    
-    <button onclick="calcularDiagnostico()">Calcular Diagnóstico</button>
-</section>
+  </section>
     <section class="contenedor" id="servicio">
         <h2 class="Subtitulo">Te generamos tu diagnostico Preventivo</h2>
         <div class="contenedor-servicio">
