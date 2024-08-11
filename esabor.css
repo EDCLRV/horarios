@@ -230,7 +230,9 @@ iframe {
     transform: translate(0);
 }
 .columna-estrecha {
-            width: 30%; /* Ancho específico para esta columna */
+            flex: 1; /* Ocupa la mitad de espacio que la columna ancha */
+            background-color: lightcoral; /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
         }
 .agregar-imagen{
     object-fit: cover;
