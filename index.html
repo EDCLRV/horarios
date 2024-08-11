@@ -18,7 +18,6 @@
         <nav class="menu-navegacion">
 
             <a href="#inicio">Inicio</a>
-            /*<a href="#diagnostico">Diagnostico Dinámcio</a>*/
             <a href="#servicio">Prediagnostico</a>
             <a href="#dietas">Dietas</a>
             <a href="#doctores">Medicos</a>
@@ -44,32 +43,7 @@
    
 
 <main>
- <section class="experts" id="diagnostico">
-        <h2 class="Subtitulo">Diagnostico Dinámico</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th class="columna-estrecha">Medida</th>
-                <th class="columna-estrecha">Valor</th>
-                <th class="columna-estrecha">Diagnóstico</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>TAS</td>
-                <td><input type="number" id="tas" placeholder="Ingrese TAS"></td>
-                <td rowspan="2" id="diagnostico"></td>
-            </tr>
-            <tr>
-                <td>TAD</td>
-                <td><input type="number" id="tad" placeholder="Ingrese TAD"></td>
-            </tr>
-        </tbody>
-    </table>
-    <button onclick="calcularDiagnostico()">Calcular Diagnóstico</button>
-
-  </section>
     <section class="contenedor" id="servicio">
         <h2 class="Subtitulo">Te generamos tu diagnostico Preventivo</h2>
         <div class="contenedor-servicio">
@@ -200,29 +174,4 @@
 
 </body>
 </html>
-<script>
-        function calcularDiagnostico() {
-            const tas = parseInt(document.getElementById('tas').value);
-            const tad = parseInt(document.getElementById('tad').value);
-            let diagnostico = '';
-
-            if (tas < 90 && tad < 60) {
-                diagnostico = 'Hipotensión';
-            } else if (tas >= 90 && tas <= 120 && tad >= 60 && tad <= 80) {
-                diagnostico = 'Normotensión';
-            } else if (tas >= 120 && tas <= 129 && tad >= 60 && tad <= 80) {
-                diagnostico = 'Elevada';
-            } else if ((tas >= 130 && tas <= 139) || (tad >= 80 && tad <= 89)) {
-                diagnostico = 'Hipertensión Nivel 1';
-            } else if (tas > 140 || tad > 90) {
-                diagnostico = 'Hipertensión Nivel 2';
-            } else if (tas > 180 || tad > 120) {
-                diagnostico = 'Crisis Hipertensiva';
-            } else {
-                diagnostico = 'Valor fuera de rango';
-            }
-
-            document.getElementById('diagnostico').innerText = diagnostico;
-        }
-    </script>
 
