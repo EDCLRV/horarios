@@ -24,6 +24,7 @@ body{
 
 header{
     height: 80vh;
+    place-items: center;
     background-image: url(parian.jpg);
     background-repeat: no-repeat;
     background-size: cover;
