@@ -71,7 +71,7 @@ iframe {
     right: 0;
     width: 30vh;
     height: 100%;
-    background-image: linear-gradient(135deg, #34aa3e 0%, #064b11 100%);
+    background-image: linear-gradient(135deg, #a70815 0%, #064b11 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
