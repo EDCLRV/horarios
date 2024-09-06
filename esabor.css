@@ -13,11 +13,11 @@ body{
 }
 
 .contenedor{
-    width: 90%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 700px;
     overflow: hidden;
     margin: auto;
-    padding: 30px 0px;
+    padding: 70px 0px;
     justify-content: center;
    
 }
