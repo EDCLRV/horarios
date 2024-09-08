@@ -24,7 +24,7 @@ body{
 
 
 header{
-    height: 80vh;
+    height: 100vh;
   
     background-image: url(parian2.jpg);
     background-repeat: no-repeat;
@@ -138,7 +138,7 @@ iframe {
 
 .titulo{
     font-size: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   
     background-color: #03470f;
    
